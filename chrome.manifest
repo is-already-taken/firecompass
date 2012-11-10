@@ -1,0 +1,8 @@
+content		firecompass	chrome/content/
+content		firecompass	chrome/content/ contentaccessible=yes
+
+overlay		chrome://firebug/content/firebugOverlay.xul chrome://firecompass/content/firecompass.xul
+
+resource	firecompass	chrome/
+
+skin		firecompass	classic/1.0	skin/
