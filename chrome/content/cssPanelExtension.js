@@ -19,9 +19,6 @@ function(FBL, Options, FBTrace) {
 			// remember original getOptionsMenuItems() (returns menu items)
 			prevGetOptionsMenuItemsFn = this._cssPanel.getOptionsMenuItems,
 
-    		
-    		FBTrace.sysout("firecompass; initContext()");
-    		
 			this._cssPanel.getOptionsMenuItems = function() {
 				// get current list of items
     			var items = prevGetOptionsMenuItemsFn();

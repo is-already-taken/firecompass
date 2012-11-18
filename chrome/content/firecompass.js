@@ -29,7 +29,7 @@ function(FBL, FBTrace) {
 		CACHE : {},
 	
 		destroyContext : function() {
-			FBTrace.sysout("firecompass; page unloading: clearing cache.");
+			// FBTrace.sysout("firecompass; page unloading: clearing cache.");
 			this.CACHE = {};
 		},
 	
@@ -152,7 +152,6 @@ function(FBL, FBTrace) {
 			// Initialize cache object for this resource.
 			// Don't forget to cleanup this reference after page unload
 			if (!FireCompass.CACHE[href]) {
-				FBTrace.sysout("firecompass; No compass info for " + stylesheet.href + ", initializing it.");
 				FireCompass.CACHE[href] = {
 					cssResource : null,
 					compassInfoMap : {}
@@ -161,12 +160,10 @@ function(FBL, FBTrace) {
 	
 			// Check if we've already cached the resources
 			if (!FireCompass.CACHE[href].cssResource) {
-				FBTrace.sysout("firecompass; No CSS resources cached for " + href + ", initializing it.");
 				
 				// Get raw CSS source as array-of-lines
 				cssResource = FireCompass.CACHE[href].cssResource = this.getCssResource(href);
 			} else {
-				FBTrace.sysout("firecompass; Using chached CSS resource.");
 				
 				// Use cached css resources
 				cssResource = FireCompass.CACHE[href].cssResource;
@@ -174,13 +171,9 @@ function(FBL, FBTrace) {
 	
 			// Check if we've already cached the compass info for this href:line
 			if (!FireCompass.CACHE[href].compassInfoMap[line]) {
-				FBTrace.sysout("firecompass; No compass info for line " + line);
-	
 				compassInfo = this.getCommentInfoByRuleLine(cssResource, line);
 	
 				if (compassInfo !== null) {
-					FBTrace.sysout("firecompass; Adding compass info for line " + line + " (" + stylesheet.href + ")");
-	
 					FireCompass.CACHE[href].compassInfoMap[line] = compassInfo;
 				}
 			}
