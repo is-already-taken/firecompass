@@ -1,10 +1,65 @@
 # FireCompass Firebug extension
 
-Firebug extension that shows the original .scss path and line number of generated .css files within the tooltip of the inspector/CSS panel. 
+This Firebug extension will reveal the original .scss filename and line number in the CSS inspector panel if the generated CSS code has debugging-comments in it.
+This will assit you if you're generating your .css files with [Compass](http://compass-style.org/).
+
+## Features
+
+* Shows the original filename and line number within the tooltip
+* The source link can be rendered with .scss filename and line number or .css filename and linenumber (default) 
+* Compass internal styles (like reset.css) are marked with \[Compass\] (within the tooltip) or \[Filename\] (line number) (as source link)
+
+
+## How it works
+
+
+The plugin looks for the comment above each CSS rule containing the original filename and linenumber.
+Thus, it requires that the comments are generated into the target .css file.
+
+```
+...
+/* line 13, ../scss/index.scss */
+body, html {
+...
+```
+
+
+## Configure your compass project
+
+There are two options which control this.
+
+1. The `line_comments` option within your config.rb (default name)
+   This should be true or undefined.
+2. The `-e, --environment` switch of compass
+   This should be not specified or of value "development" 
+
+
+# Requirements (tested with) 
+
+* Firefox 16.0.x
+* Firebug 1.10.x
+* Compass 0.12.x
+* Debug comments (line_comments option) and development environment
+
+It might work with older or newer version too.
 
 # State
 
-In development.
+Main development done. Release candidate.
+
+## ToDo
+
+* Optimize tooltip layout/style 
+* Make the source link not clickable or ignore click if rendered with .scss path 
+* Create an addon logo
+
+# Screenshots
+
+![Screenshot: CSS Panel with options menu open](https://raw.github.com/is-already-taken/firecompass/master/doc/screenshot_firecompass_css_panel_options_menu.png "CSS Panel with options menu open")
+![Screenshot: Tooltip showing generated (.css) and original (.scss) filename and line number](https://raw.github.com/is-already-taken/firecompass/master/doc/screenshot_firecompass_showing_tooltip_compass_internal_rule.png "Tooltip showing generated (.css) and original (.scss) filename and line number")
+![Screenshot: Tooltip showing generated (.css) and original (.scss) filename and line number of a Compass internal style/rule](https://raw.github.com/is-already-taken/firecompass/master/doc/screenshot_firecompass_showing_tooltip_normal_rule.png "Tooltip showing generated (.css) and original (.scss) filename and line number of a Compass internal style/rule")
+![Screenshot: Source link rendered with .scss filename and line number](https://raw.github.com/is-already-taken/firecompass/master/doc/screenshot_firecompass_source_link_rendered_with_scss_filename_and_line.png "Source link rendered with .scss filename and line number")
+
 
 # License 
 
