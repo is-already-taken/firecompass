@@ -5,4 +5,8 @@ overlay		chrome://firebug/content/firebugOverlay.xul chrome://firecompass/conten
 
 resource	firecompass	chrome/
 
+locale		firecompass	en-US	chrome/locale/en-US/
+locale		firecompass	en-GB	chrome/locale/en-US/
+locale		firecompass	de-DE	chrome/locale/de-DE/
+
 skin		firecompass	classic/1.0	skin/

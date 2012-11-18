@@ -3,5 +3,9 @@
 	id="firecompass"
 	xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 	
+		<stringbundleset id="stringbundleset">
+			<stringbundle id="firecompass-stringbundle" src="chrome://firecompass/locale/firecompass.properties" />
+		</stringbundleset>
+		
 		<script type="application/x-javascript" src="chrome://firecompass/content/mainOverlay.js" />
 </overlay>

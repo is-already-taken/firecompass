@@ -173,10 +173,7 @@ function(FBL, FBTrace) {
 		}
 	
 	});
-
 	
-	Firebug.registerModule(FireCompass);
-
 	return FireCompass;
 	
 });
