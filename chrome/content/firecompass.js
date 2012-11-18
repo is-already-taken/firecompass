@@ -33,6 +33,7 @@ function(FBL, FBTrace) {
 			this.CACHE = {};
 		},
 	
+		// Get the actual, raw CSS file by href
 		getCssResource : function(href) {
 			return Firebug.currentContext.sourceCache.load(href);
 		},
@@ -127,18 +128,29 @@ function(FBL, FBTrace) {
 	
 		cacheCompassInfo : function(sourceLink) {
 			var line = sourceLink.line,
-				// TODO handle object null
 				obj = sourceLink.object,
-				stylesheet = obj.parentStyleSheet,
-				href = stylesheet.href,
+				href,
         		cssResource,
         		compassInfo;
-	
+
+			if (!obj) {
+				return;
+			}
+			
+			// Ignore non-css resources
 			if (sourceLink.type !== "css") {
 				return;
 			}
-	
-			// don't forget to cleanup this reference after page unload
+			
+			// Unrecoverable exception
+			if (!obj.parentStyleSheet) {
+				return;
+			}
+			
+			href = obj.parentStyleSheet.href;
+
+			// Initialize cache object for this resource.
+			// Don't forget to cleanup this reference after page unload
 			if (!FireCompass.CACHE[href]) {
 				FBTrace.sysout("firecompass; No compass info for " + stylesheet.href + ", initializing it.");
 				FireCompass.CACHE[href] = {
@@ -147,18 +159,20 @@ function(FBL, FBTrace) {
 				};
 			}
 	
-			// check if we've already cached the resources
+			// Check if we've already cached the resources
 			if (!FireCompass.CACHE[href].cssResource) {
 				FBTrace.sysout("firecompass; No CSS resources cached for " + href + ", initializing it.");
-	
+				
+				// Get raw CSS source as array-of-lines
 				cssResource = FireCompass.CACHE[href].cssResource = this.getCssResource(href);
 			} else {
-				// use cached css resources
 				FBTrace.sysout("firecompass; Using chached CSS resource.");
-	
+				
+				// Use cached css resources
 				cssResource = FireCompass.CACHE[href].cssResource;
 			}
 	
+			// Check if we've already cached the compass info for this href:line
 			if (!FireCompass.CACHE[href].compassInfoMap[line]) {
 				FBTrace.sysout("firecompass; No compass info for line " + line);
 	
