@@ -58,9 +58,18 @@ Main development done. Released.
 
 ## ToDo
 
+* Add Make and/or Grunt.js based build script
 * Optimize tooltip layout/style 
 * Make the source link not clickable or ignore click if rendered with .scss path 
 * Create an addon logo
+
+# How to build
+
+Building an Firefox addon package is simple as it's just a ZIP file with the extension .xpi. Under \*nix you might just run
+
+```
+$ zip -r ../firecompass-v<VERSION NUMBER IN install.rdf>.xpi chrome/ chrome.manifest defaults/ install.rdf LICENSE.MIT skin/
+```
 
 # Screenshots
 
