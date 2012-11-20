@@ -36,16 +36,25 @@ There are two options which control this.
 
 # Requirements (tested with) 
 
-* Firefox 16.0.x
+* Firefox 15.0 - 19.*
 * Firebug 1.10.x
 * Compass 0.12.x
-* Debug comments (line_comments option) and development environment
 
-It might work with older or newer version too.
+It might work with older or newer Firebug and Compass versions too.
+
+# Changes
+
+#### v0.1.1
+* Added newlines to addon description
+* Extended Firefox version compatibility range from 16.0 - 16.* to 15.0 - 19.* 
+ 
+#### v0.1
+* Initial release.
 
 # State
 
-Main development done. Release candidate.
+Main development done. Released.
+
 
 ## ToDo
 
