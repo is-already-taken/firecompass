@@ -14,10 +14,10 @@ function(FBL, Options, FBTrace) {
     		var self = this,
     			prevGetOptionsMenuItemsFn;
 
-			this._cssPanel = context.getPanel("css"),
+			this._cssPanel = context.getPanel("css");
 			
 			// remember original getOptionsMenuItems() (returns menu items)
-			prevGetOptionsMenuItemsFn = this._cssPanel.getOptionsMenuItems,
+			prevGetOptionsMenuItemsFn = this._cssPanel.getOptionsMenuItems;
 
 			this._cssPanel.getOptionsMenuItems = function() {
 				// get current list of items
