@@ -44,6 +44,10 @@ It might work with older or newer Firebug and Compass versions too.
 
 # Changes
 
+#### v0.1.2
+
+* Fixed #1 Pseudo-Class selector options missing in CSS panel menu
+
 #### v0.1.1
 * Added newlines to addon description
 * Extended Firefox version compatibility range from 16.0 - 16.* to 15.0 - 19.* 
