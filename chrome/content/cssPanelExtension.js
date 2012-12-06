@@ -21,7 +21,7 @@ function(FBL, Options, FBTrace) {
 
 			this._cssPanel.getOptionsMenuItems = function() {
 				// get current list of items
-    			var items = prevGetOptionsMenuItemsFn();
+    			var items = prevGetOptionsMenuItemsFn.call(self._cssPanel);
     			
     			try {
 	    			// add our items
