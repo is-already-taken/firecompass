@@ -42,6 +42,10 @@ There are two options which control this.
 
 It might work with older or newer Firebug and Compass versions too.
 
+# Download
+
+https://addons.mozilla.org/de/firefox/addon/firecompass-for-firebug/
+
 # Changes
 
 #### v0.1.3
