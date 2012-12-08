@@ -44,6 +44,12 @@ It might work with older or newer Firebug and Compass versions too.
 
 # Changes
 
+#### v0.1.3
+
+* Fixed smaller mistakes in install manifest(missing type, superfluous locale)
+* Prefixed default configuration with stronly recommended "extension."
+* Changed default value CSS/SCSS display type to "SCSS"
+
 #### v0.1.2
 
 * Fixed #1 Pseudo-Class selector options missing in CSS panel menu
