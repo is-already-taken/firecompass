@@ -1,1 +1,1 @@
-pref("firecompass.cssPanel.showCssOrScss", "css");
+pref("extensions.firecompass.cssPanel.showCssOrScss", "css");
