@@ -3,6 +3,7 @@
 		xmlns:em="http://www.mozilla.org/2004/em-rdf#">
 		
 	<Description about="urn:mozilla:install-manifest">
+		<em:type>2</em:type>
 		<em:id>firecompass@stueckseln.de</em:id>
 		<em:creator>Thomas Lehmann</em:creator>
 		
