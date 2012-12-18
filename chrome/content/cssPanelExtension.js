@@ -64,7 +64,7 @@ function(FBL, Options, FBTrace) {
     	},
    	
     	_getPref: function(name, defaultValue) {
-			var pref = "firecompass.cssPanel." + name,
+			var pref = "extensions.firecompass.cssPanel." + name,
 				type = PREFS.getPrefType(pref);
 			
 			if (type == Ci.nsIPrefBranch.PREF_STRING) {
@@ -80,7 +80,7 @@ function(FBL, Options, FBTrace) {
         },
         
         _setPref: function(name, value) {
-			var pref = "firecompass.cssPanel." + name,
+			var pref = "extensions.firecompass.cssPanel." + name,
 				type = PREFS.getPrefType(pref);
 
 			if (type == Ci.nsIPrefBranch.PREF_STRING) {
