@@ -48,6 +48,10 @@ https://addons.mozilla.org/de/firefox/addon/firecompass-for-firebug/
 
 # Changes
 
+#### v0.1.4
+
+* Fixed #2 CSS Panel optionshave no default state, do not react on click
+
 #### v0.1.3
 
 * Fixed smaller mistakes in install manifest(missing type, superfluous locale)
