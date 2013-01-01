@@ -1,8 +1,8 @@
 define(["firebug/lib/lib", "firebug/lib/options", "firebug/lib/trace"],
 function(FBL, Options, FBTrace) {
-	const Cc = Components.classes;
-	const Ci = Components.interfaces;
-	const PREFS = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch2);
+	const	Cc = Components.classes,
+			Ci = Components.interfaces,
+			PREFS = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch2);
 	
 	// Extend Inspector/CSS panel's options menu by two items 
 	var CssPanelExtension = FBL.extend(Firebug.Module, {
@@ -54,7 +54,7 @@ function(FBL, Options, FBTrace) {
 					self._cssPanel.refresh();
 				},
 				
-				checked : self._getPref("showCssOrScss", "css") == pref
+				checked : self._getPref("showCssOrScss", "css") === pref
 			};
 		},
 		
@@ -67,13 +67,13 @@ function(FBL, Options, FBTrace) {
 			var pref = "extensions.firecompass.cssPanel." + name,
 				type = PREFS.getPrefType(pref);
 			
-			if (type == Ci.nsIPrefBranch.PREF_STRING) {
+			if (type === Ci.nsIPrefBranch.PREF_STRING) {
 				return PREFS.getCharPref(pref) || defaultValue;
 				
-			} else if (type == Ci.nsIPrefBranch.PREF_INT) {
+			} else if (type === Ci.nsIPrefBranch.PREF_INT) {
 				return PREFS.getIntPref(pref) || defaultValue;
 				
-			} else if (type == Ci.nsIPrefBranch.PREF_BOOL) {
+			} else if (type === Ci.nsIPrefBranch.PREF_BOOL) {
 				return PREFS.getBoolPref(pref) || defaultValue;
 				
 			}
@@ -83,13 +83,13 @@ function(FBL, Options, FBTrace) {
 			var pref = "extensions.firecompass.cssPanel." + name,
 				type = PREFS.getPrefType(pref);
 			
-			if (type == Ci.nsIPrefBranch.PREF_STRING) {
+			if (type === Ci.nsIPrefBranch.PREF_STRING) {
 				PREFS.setCharPref(pref, value);
 				
-			} else if (type == Ci.nsIPrefBranch.PREF_INT) {
+			} else if (type === Ci.nsIPrefBranch.PREF_INT) {
 				PREFS.setIntPref(pref, value);
 				
-			} else if (type == Ci.nsIPrefBranch.PREF_BOOL) {
+			} else if (type === Ci.nsIPrefBranch.PREF_BOOL) {
 				PREFS.setBoolPref(pref, value);
 				
 			}
