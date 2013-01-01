@@ -1,6 +1,6 @@
 define(["firebug/lib/lib", "firecompass/firecompass", "firecompass/cssPanelExtension"],
 function(FBL, FireCompass, CssPanelExtension) {
-	var SourceLink, origFetSourceLinkTitleFn;
+	var SourceLink, origGetSourceLinkTitleFn;
 	
 	// TODO Didn't find a way to import SourceLink through AMD.
 	// 
