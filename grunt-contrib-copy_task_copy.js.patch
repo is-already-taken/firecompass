@@ -1,0 +1,18 @@
+--- node_modules/grunt-contrib-copy/tasks/copy.js	2013-01-02 11:32:10.339162867 +0100
++++ node_modules/grunt-contrib-copy/tasks/copy.js	2013-01-02 12:08:16.789657600 +0100
+@@ -65,7 +65,7 @@
+           srcFile = path.normalize(srcFiles[0]);
+ 
+           grunt.verbose.or.write('Copying file' + ' to ' + file.dest.cyan + '...');
+-          grunt.file.copy(srcFile, file.dest);
++          grunt.file.copy(srcFile, file.dest, copyOptions);
+ 
+           grunt.verbose.or.ok();
+         } else {
+@@ -112,4 +112,4 @@
+       return 'file';
+     }
+   };
+-};
+\ Kein Zeilenumbruch am Dateiende.
++};
