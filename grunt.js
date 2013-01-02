@@ -15,6 +15,28 @@ module.exports = function(grunt) {
 			files: '<config:lint.files>',
 			tasks: 'lint test'
 		},
+
+		jasmine: {
+			src: "chrome/content/**/*.js",
+			specs: "specs/**/*_spec.js",
+
+			amd: true,
+			helpers: [
+				"node_modules/requirejs/require.js",
+				"specs/mocks/*.js",
+				"specs/requirejs-config.js"
+			],
+
+			timeout: 1000,
+//			template: "specs/runner.tpl",
+//			junit : {
+//				output : 'junit/'
+//			},
+			phantomjs: {
+				"ignore-ssl-errors": true
+			}
+		},
+
 		jshint: {
 			options: {
 				curly: true,
@@ -75,6 +97,7 @@ module.exports = function(grunt) {
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-jasmine-runner');
 
 	grunt.registerTask('default', 'lint test copy');
 	grunt.registerTask('dist', 'default compress');
