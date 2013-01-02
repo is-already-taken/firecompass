@@ -1,5 +1,5 @@
-define(["firebug/lib/lib", "firebug/lib/options", "firebug/lib/trace"],
-function(FBL, Options, FBTrace) {
+define(["firebug/lib/lib", "firebug/lib/trace"],
+function(FBL, FBTrace) {
 	const	Cc = Components.classes,
 			Ci = Components.interfaces,
 			PREFS = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch2);
