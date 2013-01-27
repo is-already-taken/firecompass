@@ -6,7 +6,7 @@ define("FBL-MOCK", [], function(){
 			return override;
 		},
 
-		$STRF: function(property, values){
+		$STRF: function(property, props){
 			var value;
 
 			if (!props) {
@@ -17,10 +17,10 @@ define("FBL-MOCK", [], function(){
 			
 			while (props.length > 0) {
 				value = props.shift();
-				str = str.replace(/%S/, value);
+				property = property.replace(/%S/, value);
 			}
 			
-			return str;
+			return property;
 		},
 
 		// Return maximal the last 17 chars - might not be Firebug's behaviour, but suites our needs.
@@ -31,7 +31,7 @@ define("FBL-MOCK", [], function(){
 
 		// Stub class
 		SourceLink: function(){
-			return  /* should be further mocked in the test */ };
+			return { /* should be further mocked in the test */ };
 		}
 		
 	};
