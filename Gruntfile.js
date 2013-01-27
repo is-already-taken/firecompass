@@ -5,9 +5,6 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		pkg: "<json:package.json>",
 
-		lint: {
-			files: ['grunt.js', 'chrome/**/*.js', 'defaults/**/*.js', 'specs/**/*.js']
-		},
 		test: {
 			files: ['test/**/*.js']
 		},
@@ -17,6 +14,7 @@ module.exports = function(grunt) {
 		},
 
 		jshint: {
+			all: ['grunt.js', 'chrome/**/*.js', 'defaults/**/*.js', 'specs/**/*.js'],
 			options: {
 				curly: true,
 				eqeqeq: true,
@@ -28,22 +26,22 @@ module.exports = function(grunt) {
 				undef: true,
 				boss: true,
 				eqnull: true,
-				esnext: true	// To recognize e.g. const
-			},
-			globals: {
-				// Defined by Firebug
-				Firebug: true,
-				define: true,
-				// Debined by Firefox
-				pref: true,
-				Components: true,
-				// In mocks and specs
-				console: true,
-				require: true,
-				// Jasmine
-				describe: true,
-				expect: true,
-				it: true
+				esnext: true,	// To recognize e.g. const
+				globals: {
+					// Defined by Firebug
+					Firebug: true,
+					define: true,
+					// Debined by Firefox
+					pref: true,
+					Components: true,
+					// In mocks and specs
+					console: true,
+					require: true,
+					// Jasmine
+					describe: true,
+					expect: true,
+					it: true
+				}
 			}
 		},
 
@@ -81,10 +79,11 @@ module.exports = function(grunt) {
 	
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 
-	grunt.registerTask('default', ['lint', 'test', 'copy']);
+	grunt.registerTask('default', ['jshint', 'copy']);
 	grunt.registerTask('dist', ['default', 'compress']);
 
 };
