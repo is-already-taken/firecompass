@@ -25,6 +25,8 @@
     "grunt-jasmine-runner": "~0.6.0",
     "requirejs": "~2.1.2",
     "grunt": "~0.4.0rc7",
-    "grunt-contrib-jshint": "~0.1.1rc6"
+    "grunt-contrib-jshint": "~0.1.1rc6",
+    "grunt-contrib-jasmine": "~0.3.0rc5",
+    "grunt-template-jasmine-requirejs": "~0.1.0"
   }
 }

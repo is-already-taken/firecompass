@@ -1,0 +1,11 @@
+--- node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/lib/phantomjs.js	2013-01-27 14:55:14.365591217 +0100
++++ node_modules/grunt-contrib-jasmine/node_modules/grunt-lib-phantomjs/lib/phantomjs.js	2013-01-27 14:55:04.944699575 +0100
+@@ -19,7 +19,7 @@
+   var EventEmitter2 = require('eventemitter2').EventEmitter2;
+ 
+   // Get path to phantomjs binary
+-  var binPath = "phantomjs";
++  var binPath = require('phantomjs').path;
+ 
+   // The module to be exported is an event emitter.
+   var exports = new EventEmitter2({wildcard: true});

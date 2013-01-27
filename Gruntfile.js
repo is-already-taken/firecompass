@@ -13,6 +13,25 @@ module.exports = function(grunt) {
 			tasks: 'lint test'
 		},
 
+		jasmine: {
+			src: "chrome/content/**/*.js",
+			options: {
+				specs: "specs/**/*_spec.js",
+				template: require('grunt-template-jasmine-requirejs'),
+				templateOptions: {
+					requireConfig: {
+						baseUrl: 'src/'
+					}
+				},
+				helpers: [
+					"node_modules/requirejs/require.js",
+					"specs/mocks/*.js",
+					"specs/requirejs-config.js"
+				]
+			}
+
+		},
+
 		jshint: {
 			all: ['grunt.js', 'chrome/**/*.js', 'defaults/**/*.js', 'specs/**/*.js'],
 			options: {
@@ -82,6 +101,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-jshint');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-compress');
+	grunt.loadNpmTasks('grunt-contrib-jasmine');
 
 	grunt.registerTask('default', ['jshint', 'copy']);
 	grunt.registerTask('dist', ['default', 'compress']);
