@@ -8,7 +8,11 @@ var Firebug = {
 
 	Module: {
 		// No properties/implementation required
-	}
+	},
+
+	registerExtension: function(){ /* not implemented */ },
+
+	registerTracePrefix: function(){ /* not implemented */ }
 
 };
 

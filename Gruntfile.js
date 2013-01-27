@@ -13,20 +13,34 @@ module.exports = function(grunt) {
 			tasks: 'lint test'
 		},
 
+//		connect: {
+//			test: {
+//				port: 9999
+//			}
+//		},
+
 		jasmine: {
 			src: "chrome/content/**/*.js",
 			options: {
+//				host: "http://127.0.0.1:9999/",
 				specs: "specs/**/*_spec.js",
 				template: require('grunt-template-jasmine-requirejs'),
 				templateOptions: {
 					requireConfig: {
-						baseUrl: 'src/'
+						baseUrl: "./",
+						map: {
+							"*": {
+								"firecompass": "chrome/content",
+								"firebug/lib/lib" : "FBL-MOCK",
+								"firebug/lib/trace" : "FBTRACE-MOCK"
+							}
+						}
+
 					}
 				},
 				helpers: [
 					"node_modules/requirejs/require.js",
-					"specs/mocks/*.js",
-					"specs/requirejs-config.js"
+					"specs/mocks/*.js"
 				]
 			}
 
