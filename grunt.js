@@ -84,7 +84,7 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-compress');
 
-	grunt.registerTask('default', 'lint test copy');
-	grunt.registerTask('dist', 'default compress');
+	grunt.registerTask('default', ['lint', 'test', 'copy']);
+	grunt.registerTask('dist', ['default', 'compress']);
 
 };
