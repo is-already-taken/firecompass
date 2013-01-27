@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 
 	// Project configuration.
 	grunt.initConfig({
-		pkg: "<json:package.json>",
+		pkg: grunt.file.readJSON('package.json'),
 
 		test: {
 			files: ['test/**/*.js']
