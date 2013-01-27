@@ -66,6 +66,7 @@ module.exports = function(grunt) {
 					define: true,
 					// Debined by Firefox
 					pref: true,
+					"window": true, // when mocking Components
 					Components: true,
 					// In mocks and specs
 					console: true,
@@ -73,7 +74,8 @@ module.exports = function(grunt) {
 					// Jasmine
 					describe: true,
 					expect: true,
-					it: true
+					it: true,
+					xit: true
 				}
 			}
 		},
