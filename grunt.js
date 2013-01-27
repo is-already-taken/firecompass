@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 		pkg: "<json:package.json>",
 
 		lint: {
-			files: ['grunt.js', 'chrome/**/*.js', 'defaults/**/*.js', 'test/**/*.js']
+			files: ['grunt.js', 'chrome/**/*.js', 'defaults/**/*.js', 'specs/**/*.js']
 		},
 		test: {
 			files: ['test/**/*.js']
@@ -57,7 +57,14 @@ module.exports = function(grunt) {
 				define: true,
 				// Debined by Firefox
 				pref: true,
-				Components: true
+				Components: true,
+				// In mocks and specs
+				console: true,
+				require: true,
+				// Jasmine
+				describe: true,
+				expect: true,
+				it: true
 			}
 		},
 
