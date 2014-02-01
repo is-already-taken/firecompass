@@ -36,9 +36,9 @@ There are two options which control this.
 
 # Requirements (tested with) 
 
-* Firefox 15.0 - 19.*
-* Firebug 1.10.x, 1.11.x
-* Compass 0.12.x
+* Firefox 15.0 - 29.x
+* Firebug 1.10.x - 1.12.x
+* Compass 0.12.x - 0.13.x
 
 It might work with older or newer Firebug and Compass versions too.
 

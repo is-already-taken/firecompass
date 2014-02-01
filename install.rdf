@@ -35,7 +35,7 @@ Der Dateiname und die Zeilennummer wird in einem Tooltip angezeigt, wenn man den
 			<Description
 				em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
 				em:minVersion="15.0"
-				em:maxVersion="19.*" />
+				em:maxVersion="29.*" />
 		</em:targetApplication>
 	</Description>
 </RDF>
