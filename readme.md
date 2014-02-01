@@ -48,6 +48,12 @@ https://addons.mozilla.org/de/firefox/addon/firecompass-for-firebug/
 
 # Changes
 
+#### v0.2
+
+* Code cleanup (indendation, typos, duplications)
+* Updated Firefox version compatibility to 29.x
+* Updated Firebug and Compass version compatibilities
+
 #### v0.1.4
 
 * Fixed #2 CSS Panel optionshave no default state, do not react on click
